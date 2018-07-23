@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{ object.tite}} </h1>
+{% if object.description == '' %}
+	<p>{{ object.description }}</p>
+{% elif object.description %}
+	<p>{{ object.description |add:' Mind blowing' }}</p>
+{% endif %}
+<div>
+	<ol>
+		<li style="color: red;">Using another app</li>
+		<li><em>literally understand the code</em></li>
+		<li><strong>Thanku so much coding of enterpreneur</strong></li>
+	</ol>
+</div>
+{% endblock %}

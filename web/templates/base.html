@@ -1,0 +1,18 @@
+<!-- This file is known as root of the html code and all the files extends the base html to use code -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title style="color: blue;">Learning Django Framework</title>
+</head>
+<body>
+	<h1>This is navbar tag</h1>
+	{% include 'page/page_navbar.html' %} <!-- This block is add a file navabr and show include everthong on the website -->
+	{% block content %}
+	replace me <!-- This block is used for whatever code written in b/w this block replace it -->
+	{% endblock content %}
+
+	<!-- {% block content_main %} 
+		This nblock is used for only stay in base.html will show on website only. 
+		{% endblock %}-->
+</body>
+</html>

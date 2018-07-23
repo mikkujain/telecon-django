@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<h1>Contact</h1>
+
+<!-- This block render the context values from the views -->
+	{{ my_text }}, {{ my_number }}
+	<div>
+		{{ my_list }}
+	</div>
+
+<div>
+	{{ my_html | striptags | slugify }} <!--  before i have not wriiten in safe the output will come on plain text only. this line give the heading statement  -->
+</div>
+
+<ol>
+	{% for abc in my_list %}
+		{% if abc == 25 %}
+			<li>{{ forloop.counter0 }} - {{ abc | add:28 }}</li>
+		{% elif abc == "Mikku" %}
+			<li>{{ forloop.counter0 }} - {{ abc | add:' Jain' }} </li> <!-- Or u can write this also {{ " jain" }} replace this abc | add: 'jain' -->
+		{% else %}
+			<li>{{ forloop.counter0 }} - {{ abc }}</li>
+		{% endif %}
+	{% endfor %}
+</ol>
+
+<!-- {{ forloop.counter }} this will give the how many items in the list or what iteration no are cuurently -->
+
+<!-- This line gives the relative information  -->	
+	{{ request.user.is_authenticated }} 
+
+	<!-- this is does by django default -->
+	<p>This is conatct page</p>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <form method="GET"> 
+	<input type="text" name="Title" placeholder="Your Title">
+	<input type="submit" value="save"/>
+</form> -->
+
+<!-- GET method what do in default form: This will change the url. It is similar to like whenu want to do a search on your website "http://127.0.0.1:8000/create_p/?Title="   -->
+
+ <!-- <form action='/search/' method="GET"> 
+	<input type="text" name="Title" placeholder="Your Title">
+	<input type="submit" value="save"/>
+</form> -->
+<!-- this block give me differnt URL "http://127.0.0.1:8000/search/?Title=abc" -->
+
+
+<!-- <form action='http://www.google.com/search' method="GET"> 
+	<input type="text" name="q" placeholder="Your search">
+	<input type="submit" value="save"/>
+</form> -->
+<!-- This block creates a google search engine -->
+
+<!-- To craete a own google on _self_ page -->
+<!-- <form action='http://www.google.com/search' method="POST"> 
+	<input type="text" name="q" placeholder="Your search">
+	<input type="submit" value="save"/>
+</form> -->
+<!-- This give me an error
+405. That’s an error.
+
+The request method POST is inappropriate for the URL /search. That’s all we know. -->
+
+<form action='.' method="POST"> {% csrf_token %}
+	<input type="text" name="Title" placeholder="Your Title">
+	<input type="submit" value="save"/>
+</form>
+<!-- This dot reprsents the current url -->
+{% endblock %}
+
+<!-- **** The Get request to go any URL on my page like -->
+<!-- *** Do u want to save information in backend The post method will required. -->
+
+<!-- http://127.0.0.1:8000/create_p/?title=mcskmk this i can change the title on website url the command prompt will shown -->
